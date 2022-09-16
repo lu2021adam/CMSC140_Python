@@ -1,0 +1,2 @@
+snakeCaseName = "thisIsSnakeCase"
+
