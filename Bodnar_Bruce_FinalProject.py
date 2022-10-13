@@ -2,6 +2,8 @@
 # Lilia Bodnar & Adam Bruce
 # WHRTLUHC
 
+import random as rand
+
 def wordleGame():
     print("Welcome to our Wordle game! Try and find the five letter word before running out of guesses.")
     print("")
@@ -25,7 +27,7 @@ def wordleGame():
     else:
         numGuesses = 4
         guessesLeft = 4
-    print(numGuesses)
+    
 
 wordleGame()
 
