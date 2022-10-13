@@ -25,7 +25,9 @@ def wordleGame():
     else:
         numGuesses = 4
         guessesLeft = 4
+    print(numGuesses)
 
+wordleGame()
 
 
 
