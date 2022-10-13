@@ -15,6 +15,7 @@
 # git branch -m main
 # copy code from git hub
 # git remote add origin "git link"
+
 # git pull origin main
 # git add . (EVERY TIME NEW INFORMATION)
 # git commit -m "Message Here"
