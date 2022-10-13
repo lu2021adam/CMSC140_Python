@@ -27,24 +27,4 @@ def wordleGame():
     else:
         numGuesses = 4
         guessesLeft = 4
-<<<<<<< HEAD
-    
-
 wordleGame()
-
-
-
-=======
-    print(numGuesses)
-
-    # import doc from Prof G and generate a random word from there
-    # learned how to import a file from https://datagy.io/python-read-text-file/ and https://www.geeksforgeeks.org/reading-writing-text-files-python/
-    # Permission was acquired from Professor Gregg on 10092022 via email
-    wordleFile = open("wordle.txt","r")
-    print(wordleFile)
-        #wordleList = wordleFile.readlines()
-        #wordleList = [item.rstrip() for item in wordleList]
-        #randomWord = wordleList[randint(0,len(wordleList))]
-    #randomWord = randomWord.upper()
-    #print("DELETE AFTER TEST CASES; random word is ", randomWord)
->>>>>>> 38cf8e59d8bdcba2a79c64876eacd7b6414db9e7
