@@ -13,6 +13,18 @@ def wordleGame():
     print("Enter the number corresponding with the number of guesses you would like: ")
     guessLevel = input()
 
+    while(int(guessLevel) != 1 and int(guessLevel) != 2 and int(guessLevel) != 3):
+        print("That was not a valid level. Please try again: ")
+        guessLevel = input()
+    if(int(guessLevel) == 1):
+        numGuesses = 8
+        guessesLeft = 8
+    elif(int(guessLevel) == 2):
+        numGuesses = 6
+        guessesLeft = 6
+    else:
+        numGuesses = 4
+        guessesLeft = 4
 
 
 
