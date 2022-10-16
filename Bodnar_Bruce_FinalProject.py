@@ -15,7 +15,7 @@ def wordleGame():
     print("Enter the number corresponding with the number of guesses you would like: ")
     guessLevel = input()
 
-    while(int(guessLevel) != 1 and int(guessLevel) != 2 and int(guessLevel) != 3):
+    while(int(guessLevel) != 1 and int(guessLevel) != 2 and int(guessLevel) != 3): # add something to make sure it runs if the variable is a letter also
         print("That was not a valid level. Please try again: ")
         guessLevel = input()
     if(int(guessLevel) == 1):
@@ -29,14 +29,19 @@ def wordleGame():
         guessesLeft = 4
 
 # import doc from Prof G and generate a random word from there
-    # learned how to import a file from https://datagy.io/python-read-text-file/ and https://www.geeksforgeeks.org/reading-writing-text-files-python/
+    # learned how to import a file from https://datagy.io/python-read-text-file/ and https://www.geeksforgeeks.org/reading-writing-text-files-python/ and https://www.geeksforgeeks.org/pulling-a-random-word-or-string-from-a-line-in-a-text-file-in-python/
     # Permission was acquired from Professor Gregg on 10092022 via email
-    wordleFile = open("wordle.txt","r")
-    print(wordleFile)
-        #wordleList = wordleFile.readlines()
-        #wordleList = [item.rstrip() for item in wordleList]
-        #randomWord = wordleList[randint(0,len(wordleList))]
-    #randomWord = randomWord.upper()
-    #print("DELETE AFTER TEST CASES; random word is ", randomWord)
+    
+    # open the file as file, split by whitespace, and select a random word with rand
+    with open("wordle.txt", "r") as file:
+        words = file.read()
+        seperatedWords = list(map(str, words.split()))
+        randomWord = rand.choice(seperatedWords)
 
+    print("random word: ", randomWord)
+
+    # 1. write a loop here that runs for the number of guesses the user had to guess the random word
+        # 1.2 write an if/else to tell them if they got it right or wrong or to guess again or to say they lost and print out the word
 wordleGame()
+
+# write a function here to figure out if the user wants to play again

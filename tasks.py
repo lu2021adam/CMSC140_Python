@@ -1,10 +1,10 @@
 # tasks:
 # function that runs the wordle game itself (function defining)
-#   print out instructions (print statements, user input) ADAM
-#   ask for level (if/else, while) LILIA
-#   select the random word (import files, random import)
+#   print out instructions (print statements, user input) ADAM DONE
+#   ask for level (if/else, while) LILIA DONE
+#   select the random word (import files, random import) LILIA DONE
 #   write the loop that asks for guesses (loops, user input)
-#   print out/determine results (if/else statements, comparing strings)
+#       print out/determine results (if/else statements, comparing strings)
 # function that asks if they want to play again (function defining)
 #   call the wordle game function if they enter yes to play again, else terminate (user input, if/else)
 
