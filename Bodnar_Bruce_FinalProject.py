@@ -17,7 +17,9 @@ def wordleGame():
     print("Enter the number corresponding with the number of guesses you would like: ")
     guessLevel = input()
 
-    while(int(guessLevel) != 1 and int(guessLevel) != 2 and int(guessLevel) != 3): # add something to make sure it runs if the variable is a letter also
+
+    # run the following while IF guessLevel has a letter and is not 1, 2, or 3
+    while(regex.search('[a-zA-Z]', guessLevel) != None or (int(guessLevel) != 1 and int(guessLevel) != 2 and int(guessLevel) != 3)):
         print("That was not a valid level. Please try again: ")
         guessLevel = input()
     if(int(guessLevel) == 1):
@@ -40,12 +42,13 @@ def wordleGame():
         seperatedWords = list(map(str, words.split()))
         randomWord = rand.choice(seperatedWords)
 
-    print("random word: ", randomWord)
+    print("random word: ", randomWord) # DELETE AFTER TESTING
 
     # 1. write a loop here that runs for the number of guesses the user had to guess the random word
         # 1.2 write an if/else to tell them if they got it right or wrong or to guess again or to say they lost and print out the word
-    for i in range(numGuesses): 
+    for _ in range(numGuesses): 
         guessesLeft -= 1
+        print("")
         print("Please guess the word: ")
         userGuess = input()
         while(len(userGuess) != 5):
@@ -65,11 +68,11 @@ def wordleGame():
                 else:
                     correctLetters += "-"
             print("")
-            print("You have: ", guessesLeft, " guesses remaining.")
+            print("You have ", guessesLeft, " guesses remaining")
         print("Your correct placements are: ", correctLetters)
     if(guessesLeft == 0):
         print("")
-        print("You didn't guess the word. Please play again. The random word was",randomWord)
+        print("You didn't guess the word, but you can try again with a different word. The random word was",randomWord)
 
 def playWordle():
     print("Do you want to play wordle?")
