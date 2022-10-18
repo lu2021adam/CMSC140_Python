@@ -85,6 +85,7 @@ def playWordle():
             print("Call the function again when you want to play Wordle!")
     print("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n")
     playAgain = str(input())
+    # somehow go through the while loop again
 
 
 playWordle()
