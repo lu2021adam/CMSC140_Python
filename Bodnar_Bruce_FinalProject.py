@@ -4,6 +4,8 @@
 
 import random as rand
 
+import re as regex
+
 def wordleGame():
     print("Welcome to our Wordle game! Try and find the five letter word before running out of guesses.")
     print("")
@@ -67,8 +69,23 @@ def wordleGame():
         print("Your correct placements are: ", correctLetters)
     print("")
     print("You didn't guess the word. Please play again. The random word was",randomWord)
-            
-                
+
+def playWordle():
+    print("Do you want to play wordle?")
+    playAgain = str(input())
+    yes_regex = regex.compile(r'(Y|y)(es)?$') # a regex for valid forms of yes
+    no_regex = regex.compile(r'(N|n)(o)?$') # A regex for valid forms of no
+    if playAgain == yes_regex:
+        while(playAgain != no_regex): 
+            wordleGame()
+            print("Do you want to play again? (yes/no)")
+    elif playAgain == no_regex:
+        print("Call the function again when you want to play Wordle!")
+    else: 
+        print("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n")
+
+
+
 
 
 
