@@ -44,20 +44,23 @@ def wordleGame():
         # 1.2 write an if/else to tell them if they got it right or wrong or to guess again or to say they lost and print out the word
     for i in range(numGuesses): 
         guessesLeft -= 1
-        userGuess = print(input("Please guess the word: "))
+        print("Please guess the word: ")
+        userGuess = input()
         userGuess = str(userGuess).lower()
         correctLetters = ""
+        print("user guess " ,userGuess)
         if userGuess == randomWord:
             print("You won! Thanks for playing :^)")
+            break
         else: 
             for letter in range(len(int(userGuess) - 1)):
                 if userGuess[letter] == randomWord[letter]:
                     correctLetters += userGuess[letter]
                 else:
                     correctLetters += "-"
+            print("")
+            print("You have: ", guessesLeft, " guesses remaining.")
         print("Your correct placements are: ", correctLetters)
-    print("")
-    print("You have: ", guessesLeft, " guesses remaining.")
             
                 
 
