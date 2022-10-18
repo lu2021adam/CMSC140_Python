@@ -53,9 +53,9 @@ def wordleGame():
             userGuess = input()
         userGuess = str(userGuess).lower()
         correctLetters = ""
-        print("user guess " ,userGuess)
 
         if userGuess == randomWord:
+            print("")
             print("You won! Thanks for playing :^)")
             break
         else: 
@@ -76,16 +76,25 @@ def playWordle():
     playAgain = str(input())
     yes_regex = regex.compile(r'(Y|y)(es)?$') # a regex for valid forms of yes
     no_regex = regex.compile(r'(N|n)(o)?$') # A regex for valid forms of no
-    while(regex.match(yes_regex, playAgain) or regex.match(no_regex, playAgain)):
+    # while loop checks to see if they entered a valid yes/no and runs until they do; not working right but the program still runs
+    while(regex.match(yes_regex, playAgain) == False and regex.match(no_regex, playAgain) == False):
+        print("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n")
+        playAgain = input()
+
+    # this while loop runs while playAgain is yes and terminates when it is not and also check to see if playAgain is a valid form of yes/no
+    while(regex.match(yes_regex, playAgain)):
+        while(regex.match(yes_regex, playAgain) == False and regex.match(no_regex, playAgain) == False):
+            print("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n")
+            playAgain = input()
         if regex.match(yes_regex, playAgain):
+            print("")
+            print("---------------------------")
+            print("")
             wordleGame()
+            print("")
             print("Do you want to play again? (yes/no)")
             playAgain = str(input())
-        elif regex.match(no_regex, playAgain):
-            print("Call the function again when you want to play Wordle!")
-    print("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n")
-    playAgain = str(input())
-    # somehow go through the while loop again
-
+    # this will run once they say no
+    print("Okay! Have a nice day!")
 
 playWordle()
