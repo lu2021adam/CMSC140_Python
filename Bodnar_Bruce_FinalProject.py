@@ -46,14 +46,18 @@ def wordleGame():
         guessesLeft -= 1
         print("Please guess the word: ")
         userGuess = input()
+        while(len(userGuess) != 5):
+            print("Please guess a 5 letter word: ")
+            userGuess = input()
         userGuess = str(userGuess).lower()
         correctLetters = ""
         print("user guess " ,userGuess)
+
         if userGuess == randomWord:
             print("You won! Thanks for playing :^)")
             break
         else: 
-            for letter in range(len(int(userGuess) - 1)):
+            for letter in range(len(userGuess)):
                 if userGuess[letter] == randomWord[letter]:
                     correctLetters += userGuess[letter]
                 else:
