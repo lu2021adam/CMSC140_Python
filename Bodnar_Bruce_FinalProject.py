@@ -67,8 +67,9 @@ def wordleGame():
             print("")
             print("You have: ", guessesLeft, " guesses remaining.")
         print("Your correct placements are: ", correctLetters)
-    print("")
-    print("You didn't guess the word. Please play again. The random word was",randomWord)
+    if(guessesLeft == 0):
+        print("")
+        print("You didn't guess the word. Please play again. The random word was",randomWord)
 
 def playWordle():
     print("Do you want to play wordle?")
@@ -82,11 +83,8 @@ def playWordle():
             playAgain = str(input())
         elif regex.match(no_regex, playAgain):
             print("Call the function again when you want to play Wordle!")
-        else: 
-            print("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n")
-            playAgain = str(input())
+    print("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n")
+    playAgain = str(input())
 
 
 playWordle()
-
-# write a function here to figure out if the user wants to play again
