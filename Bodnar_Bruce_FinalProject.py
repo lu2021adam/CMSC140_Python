@@ -87,9 +87,6 @@ def playWordle():
             playAgain = str(input())
 
 
-
-
-
-wordleGame()
+playWordle()
 
 # write a function here to figure out if the user wants to play again
