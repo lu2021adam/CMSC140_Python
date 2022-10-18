@@ -65,6 +65,8 @@ def wordleGame():
             print("")
             print("You have: ", guessesLeft, " guesses remaining.")
         print("Your correct placements are: ", correctLetters)
+    print("")
+    print("You didn't guess the word. Please play again. The random word was",randomWord)
             
                 
 
