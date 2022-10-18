@@ -75,16 +75,16 @@ def playWordle():
     playAgain = str(input())
     yes_regex = regex.compile(r'(Y|y)(es)?$') # a regex for valid forms of yes
     no_regex = regex.compile(r'(N|n)(o)?$') # A regex for valid forms of no
-    if playAgain == yes_regex:
-        while(playAgain != no_regex): 
+    while(regex.match(yes_regex, playAgain) or regex.match(no_regex, playAgain)):
+        if regex.match(yes_regex, playAgain):
             wordleGame()
             print("Do you want to play again? (yes/no)")
-    elif playAgain == no_regex:
-        print("Call the function again when you want to play Wordle!")
-    else: 
-        print("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n")
-
-
+            playAgain = str(input())
+        elif regex.match(no_regex, playAgain):
+            print("Call the function again when you want to play Wordle!")
+        else: 
+            print("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n")
+            playAgain = str(input())
 
 
 
