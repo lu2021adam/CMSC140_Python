@@ -50,8 +50,8 @@ def wordleGame():
         print("")
         print("Please guess the five letter word: ")
         userGuess = input()
-        while(len(userGuess) != 5):
-            print("Please guess a 5 letter word: ")
+        while(len(userGuess) != 5 or userGuess not in seperatedWords):
+            print("Please guess a valid 5 letter word: ")
             userGuess = input()
         userGuess = str(userGuess).lower()
         correctLetters = ""
