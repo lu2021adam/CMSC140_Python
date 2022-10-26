@@ -48,7 +48,7 @@ def wordleGame():
     for _ in range(numGuesses): 
         guessesLeft -= 1
         print("")
-        print("Please guess the word: ")
+        print("Please guess the five letter word: ")
         userGuess = input()
         while(len(userGuess) != 5):
             print("Please guess a 5 letter word: ")
