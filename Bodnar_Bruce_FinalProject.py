@@ -42,7 +42,6 @@ def wordleGame():
         seperatedWords = list(map(str, words.split()))
         randomWord = rand.choice(seperatedWords)
 
-    print("random word: ", randomWord) # DELETE AFTER TESTING
 
     # 1. write a loop here that runs for the number of guesses the user had to guess the random word
         # 1.2 write an if/else to tell them if they got it right or wrong or to guess again or to say they lost and print out the word
