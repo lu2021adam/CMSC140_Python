@@ -41,19 +41,25 @@ def wordleGame():
         words = file.read()
         seperatedWords = list(map(str, words.split()))
         randomWord = rand.choice(seperatedWords)
-
+        print(randomWord)
 
     # 1. write a loop here that runs for the number of guesses the user had to guess the random word
         # 1.2 write an if/else to tell them if they got it right or wrong or to guess again or to say they lost and print out the word
-    for _ in range(numGuesses): 
-        guessesLeft -= 1
-        print("")
+    for _ in range(numGuesses):
         print("Please guess the five letter word: ")
         userGuess = input()
-        while(len(userGuess) != 5 or userGuess not in seperatedWords):
-            print("Please guess a valid 5 letter word: ")
+        while(len(userGuess) != 5):
+            print("")
+            print("Please guess a 5 letter word: ")
+            print("You still have", guessesLeft, "guesses remaining")
+            userGuess = input()
+        while(userGuess not in seperatedWords):
+            print("")
+            print("Your word is not in the list of possible words. Please try again")
+            print("You still have", guessesLeft, "guesses remaining")
             userGuess = input()
         userGuess = str(userGuess).lower()
+        guessesLeft -= 1
         correctLetters = ""
 
         if userGuess == randomWord:
@@ -67,9 +73,9 @@ def wordleGame():
                 else:
                     correctLetters += "-"
             print("")
-            print("You have ", guessesLeft, " guesses remaining")
-        print("Your correct placements are: ", correctLetters)
-    if(guessesLeft == 0):
+            print("You have", guessesLeft, "guesses remaining")
+        print("Your correct placements are:", correctLetters)
+    if(guessesLeft == 0 and userGuess != randomWord):
         print("")
         print("You didn't guess the word, but you can try again with a different word. The random word was",randomWord)
 
