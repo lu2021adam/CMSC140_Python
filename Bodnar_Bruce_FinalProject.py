@@ -3,7 +3,6 @@
 # WHRTLUHC
 
 import random as rand
-
 import re as regex
 
 def wordleGame():
@@ -76,6 +75,7 @@ def wordleGame():
             print("")
             print("You have", guessesLeft, "guesses remaining")
         print("Your correct placements are:", correctLetters)
+        print("You have guessed the following words:", *guessedWords)
     if(guessesLeft == 0 and userGuess != randomWord):
         print("")
         print("You didn't guess the word, but you can try again with a different word. The random word was",randomWord)
