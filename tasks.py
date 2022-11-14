@@ -5,7 +5,7 @@
 #   select the random word (import files, random import) LILIA DONE
 #   write the loop that asks for guesses (loops, user input) ADAM DONE
 #   print out/determine results (if/else statements, comparing strings) ADAM DONE
-# function that asks if they want to play again (function defining) LILIA DONE
+#   function that asks if they want to play again (function defining) LILIA DONE
 #   call the wordle game function if they enter yes to play again, else terminate (user input, if/else)
 
 
