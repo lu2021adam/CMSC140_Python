@@ -13,14 +13,12 @@ def wordleGame():
     print("2: Medium (6 guesses)")
     print("3: Hard (4 guesses)")
     print("")
-    print("Enter the number corresponding with the number of guesses you would like: ")
-    guessLevel = input()
+    guessLevel = input("Enter the number corresponding with the number of guesses you would like: ")
     guessedWords = []
 
     # run the following while IF guessLevel has a letter and is not 1, 2, or 3
     while(regex.search('[a-zA-Z]', guessLevel) != None or (int(guessLevel) != 1 and int(guessLevel) != 2 and int(guessLevel) != 3)):
-        print("That was not a valid level. Please try again: ")
-        guessLevel = input()
+        guessLevel = input("That was not a valid level. Please try again: ")
     if(int(guessLevel) == 1):
         numGuesses = 8
         guessesLeft = 8
@@ -40,18 +38,15 @@ def wordleGame():
         words = file.read()
         seperatedWords = list(map(str, words.split()))
         randomWord = rand.choice(seperatedWords)
-        print(randomWord) # delete this
 
     # 1. write a loop here that runs for the number of guesses the user had to guess the random word
         # 1.2 write an if/else to tell them if they got it right or wrong or to guess again or to say they lost and print out the word
     for _ in range(numGuesses):
-        print("Please guess the five letter word: ")
-        userGuess = input()
+        userGuess = input("Please guess the five letter word: ")
         while(len(userGuess) != 5):
             print("")
-            print("Please guess a 5 letter word: ")
             print("You still have", guessesLeft, "guesses remaining")
-            userGuess = input()
+            userGuess = input("Please guess a 5 letter word: ")
         while(userGuess not in seperatedWords):
             print("")
             print("Your word is not in the list of possible words. Please try again")
@@ -76,25 +71,23 @@ def wordleGame():
             print("You have", guessesLeft, "guesses remaining")
         print("Your correct placements are:", correctLetters)
         print("You have guessed the following words:", *guessedWords)
+        print("")
     if(guessesLeft == 0 and userGuess != randomWord):
         print("")
         print("You didn't guess the word, but you can try again with a different word. The random word was",randomWord)
 
 def playWordle():
-    print("Do you want to play wordle?")
-    playAgain = str(input())
+    playAgain = str(input("Do you want to play wordle? "))
     yes_regex = regex.compile(r'(Y|y)(es)?$') # a regex for valid forms of yes
     no_regex = regex.compile(r'(N|n)(o)?$') # a regex for valid forms of no
     # while loop checks to see if they entered a valid yes/no and runs until they do; not working right but the program still runs
     while not regex.match(yes_regex, playAgain) and not regex.match(no_regex, playAgain):
-        print("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n")
-        playAgain = input()
+        playAgain = input("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n: ")
 
     # this while loop runs while playAgain is yes and terminates when it is not and also check to see if playAgain is a valid form of yes/no
     while(regex.match(yes_regex, playAgain)):
         while not regex.match(yes_regex, playAgain) and not regex.match(no_regex, playAgain):
-            print("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n")
-            playAgain = str(input())
+            playAgain = str(input("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n: "))
 
         if regex.match(yes_regex, playAgain):
             print("")
@@ -102,11 +95,9 @@ def playWordle():
             print("")
             wordleGame()
             print("")
-            print("Do you want to play again? (yes/no)")
-            playAgain = str(input())
+            playAgain = str(input("Do you want to play again? (yes/no) "))
             while not regex.match(yes_regex, playAgain) and not regex.match(no_regex, playAgain):
-                print("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n")
-                playAgain = str(input())
+                playAgain = str(input("Please enter a valid form of yes or no. Valid Forms: Yes, Y, yes, y, No, N, no, n: "))
     # this will run once they say no
     print("Okay! Have a nice day!")
 
